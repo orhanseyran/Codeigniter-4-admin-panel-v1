@@ -28,3 +28,6 @@ Tatil Modu:
 
 Tatil Modu Özelliği: Kullanıcıların satış yapmayacakları dönemlerde tüm ürünlerini otomatik olarak satıştan çekmelerini sağlar. Tatil modu etkinleştirildiğinde, tüm ürünler satıştan kaldırılır ve kullanıcılar tatil döneminde satış yapamaz.
 Bu proje, e-ticaret operasyonlarını verimli bir şekilde yönetmek ve kullanıcı deneyimini iyileştirmek için tasarlanmıştır. Sadece 2 gün içinde tamamlanmış olması, hızlı ve etkili çözüm üretme yeteneğimi göstermektedir. Amacım, şirkete katılarak bu tür yenilikçi çözümlerle katkı sağlamak ve sektördeki başarıya ortak olmaktır.
+
+
+Not : İlgili Projenin Veritabanı Ana Dizini İçindedir
