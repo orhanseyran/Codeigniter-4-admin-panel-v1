@@ -1,6 +1,6 @@
 E-Ticaret Yönetim Paneli Projesi
 
-Bu proje, yazılım geliştirme alanındaki yetkinliklerimi sergilemek ve şirketinize değer katmak amacıyla, kısa süre içinde tamamlanmıştır. Sadece 2 gün içinde geliştirilen bu e-ticaret yönetim paneli, kullanıcı dostu ve işlevsel özellikleriyle dikkat çekmektedir. Panelin temel özellikleri arasında ürün yönetimi, kategori yönetimi, marka yönetimi, kargo yönetimi ve tatil modu bulunuyor.
+Bu proje, yazılım geliştirme alanındaki yetkinliklerimi sergilemek ve şirketinize değer katmak amacıyla, kısa süre içinde tamamlanmıştır. Sadece 2 gün içinde geliştirilen bu e-ticaret yönetim paneli, kullanıcı dostu ve işlevsel özellikleriyle dikkat çekmektedir. Panelin temel özellikleri arasında ürün yönetimi, kategori yönetimi, marka yönetimi, kargo yönetimi ve tatil modu bulunuyor. Ayrıca, güvenlik açısından oturum (session) bazlı giriş ve kayıt sistemleri entegre edilmiştir. Birden fazla satıcı, sisteme üye olup ürünlerini yayınlayabilir.
 
 Proje Özellikleri:
 
@@ -27,7 +27,10 @@ Kargo Silme: Kullanılmayan kargo seçenekleri sistemden kaldırılabilir.
 Tatil Modu:
 
 Tatil Modu Özelliği: Kullanıcıların satış yapmayacakları dönemlerde tüm ürünlerini otomatik olarak satıştan çekmelerini sağlar. Tatil modu etkinleştirildiğinde, tüm ürünler satıştan kaldırılır ve kullanıcılar tatil döneminde satış yapamaz.
+Güvenlik:
+
+Oturum (Session) Bazlı Giriş ve Kayıt: Kullanıcıların güvenli bir şekilde sisteme giriş yapmalarını ve yeni kullanıcıların güvenli bir şekilde kayıt olmalarını sağlayan oturum bazlı sistem entegre edilmiştir.
+Çoklu Satıcı Desteği:
+
+Satıcı Üyelik ve Ürün Yayınlama: Birden fazla satıcı, sisteme üye olup kendi ürünlerini yayınlayabilir, bu da platformun esnekliğini ve kullanıcı tabanını genişletir.
 Bu proje, e-ticaret operasyonlarını verimli bir şekilde yönetmek ve kullanıcı deneyimini iyileştirmek için tasarlanmıştır. Sadece 2 gün içinde tamamlanmış olması, hızlı ve etkili çözüm üretme yeteneğimi göstermektedir. Amacım, şirkete katılarak bu tür yenilikçi çözümlerle katkı sağlamak ve sektördeki başarıya ortak olmaktır.
-
-
-Not : İlgili Projenin Veritabanı Ana Dizini İçindedir
