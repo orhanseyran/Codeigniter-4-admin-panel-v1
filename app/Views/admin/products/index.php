@@ -213,11 +213,11 @@
                             </td> -->
                             <td> 
                               <div class="product-action"><a href="admin-productedit-<?= $product["id"] ?>"> 
-                                  <svg>    
+                                  <svg>   
                                     <use href="../assets/svg/icon-sprite.svg#edit-content"></use>
                                   </svg></a>
                                 <svg>
-                                  <use href="../assets/svg/icon-sprite.svg#trash1"></use>
+                                 <a onclick="confirm('Ürünü Silmek İstiyormusunuz')" href="admin-productdelete-<?= $product["id"] ?>"><use href="../assets/svg/icon-sprite.svg#trash1"></use></a> 
                                 </svg>
                               </div>
                             </td>
