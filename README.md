@@ -1,68 +1,36 @@
-# CodeIgniter 4 Application Starter
+E-Ticaret Yönetim Paneli Projesi
 
-## What is CodeIgniter?
+Bu proje, yazılım geliştirme alanındaki yetkinliklerimi sergilemek ve şirketinize değer katmak amacıyla, kısa süre içinde tamamlanmıştır. Sadece 2 gün içinde geliştirilen bu e-ticaret yönetim paneli, kullanıcı dostu ve işlevsel özellikleriyle dikkat çekmektedir. Panelin temel özellikleri arasında ürün yönetimi, kategori yönetimi, marka yönetimi, kargo yönetimi ve tatil modu bulunuyor. Ayrıca, güvenlik açısından oturum (session) bazlı giriş ve kayıt sistemleri entegre edilmiştir. Birden fazla satıcı, sisteme üye olup ürünlerini yayınlayabilir.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+Proje Özellikleri:
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+Ürün Yönetimi:
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+Ürün Ekleme: Yeni ürünlerin eklenmesini sağlayan kapsamlı bir modül. Ürün bilgileri, görseller ve fiyatlandırma detayları kolaylıkla girilebilir.
+Ürün Güncelleme: Mevcut ürünlerin bilgilerinin düzenlenmesini ve güncellenmesini sağlar.
+Ürün Silme: Satışı sona eren veya artık listelenmeyecek ürünler sistemden kaldırılabilir.
+Kategori Yönetimi:
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+Kategori Ekleme: Yeni ürün kategorileri eklenebilir, böylece ürünlerinizi daha düzenli bir şekilde yönetebilirsiniz.
+Kategori Güncelleme: Mevcut kategoriler üzerinde değişiklikler yapılabilir.
+Kategori Silme: Kullanılmayan kategoriler sistemden kaldırılabilir.
+Marka Yönetimi:
 
-## Installation & updates
+Marka Ekleme: Satışa sunulan ürünlerin markalarını belirleyip, yeni markalar eklenebilir.
+Marka Güncelleme: Marka bilgilerinin düzenlenmesi ve güncellenmesi mümkündür.
+Marka Silme: Artık satış yapılmayan markalar sistemden kaldırılabilir.
+Kargo Yönetimi:
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+Kargo Ekleme: Yeni kargo seçenekleri eklenebilir.
+Kargo Güncelleme: Mevcut kargo seçenekleri üzerinde değişiklikler yapılabilir.
+Kargo Silme: Kullanılmayan kargo seçenekleri sistemden kaldırılabilir.
+Tatil Modu:
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+Tatil Modu Özelliği: Kullanıcıların satış yapmayacakları dönemlerde tüm ürünlerini otomatik olarak satıştan çekmelerini sağlar. Tatil modu etkinleştirildiğinde, tüm ürünler satıştan kaldırılır ve kullanıcılar tatil döneminde satış yapamaz.
+Güvenlik:
 
-## Setup
+Oturum (Session) Bazlı Giriş ve Kayıt: Kullanıcıların güvenli bir şekilde sisteme giriş yapmalarını ve yeni kullanıcıların güvenli bir şekilde kayıt olmalarını sağlayan oturum bazlı sistem entegre edilmiştir.
+Çoklu Satıcı Desteği:
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
-
-## Important Change with index.php
-
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
-
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 8.1 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+Satıcı Üyelik ve Ürün Yayınlama: Birden fazla satıcı, sisteme üye olup kendi ürünlerini yayınlayabilir, bu da platformun esnekliğini ve kullanıcı tabanını genişletir.
+Bu proje, e-ticaret operasyonlarını verimli bir şekilde yönetmek ve kullanıcı deneyimini iyileştirmek için tasarlanmıştır. Sadece 2 gün içinde tamamlanmış olması, hızlı ve etkili çözüm üretme yeteneğimi göstermektedir. Amacım, şirkete katılarak bu tür yenilikçi çözümlerle katkı sağlamak ve sektördeki başarıya ortak olmaktır.
