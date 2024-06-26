@@ -146,6 +146,7 @@ class ProductController extends BaseController
                 'price' => $this->request->getPost('price'),
                 'description' => $this->request->getPost('description'),
                 'brand' => $this->request->getPost('brand'),
+                'qty' => $this->request->getPost('qty'),
                 'cargo' => $this->request->getPost('cargo'),
                 'category' => $this->request->getPost('category'),
                 'user_id' => $this->session_id,
