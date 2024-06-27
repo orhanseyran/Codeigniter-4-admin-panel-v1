@@ -52,17 +52,18 @@ class LoginRegisterController extends BaseController
 
                $session = $this->user->save($data);
 
-
+//deneme
                // eğer kullanıcı kayıt session ile oturum başlat
+               $user = $this->user->where('email', $data['email'])->first();
 
-               if ($session) {
+               if ($user) {
                 $session = session();
                 $session->set([
 
                     'name' => $this->request->getVar('name'),
                     'email' => $this->request->getVar('email'),
                     'role' => $this->request->getvar("role"),
-                    'id' => $session['id'],
+                    'id' => $user['id'],
                     'isLoggedIn' => true,
                     
                 ]);

@@ -31,11 +31,11 @@ class LoginUserMiddleware implements FilterInterface
             return $request; 
             //session yok ise kullanıcının isteğini devam ettir
         }
-        elseif(session()->get('isLoggedIn')) {
+        else{
             return redirect()->back();
         }
         // Giriş yapmışsa, Geldiği Sayfaya geri gönder
-        return redirect()->to('/login-user');
+        return redirect()->to("login-user");
     
         
         
