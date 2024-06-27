@@ -118,8 +118,8 @@ class ProductController extends BaseController
             'stock_code' => 'SK' . rand(99,999999),
             'user_id' => $this->session_id,
             'qty' => $this->request->getPost('qty'),
-            'image' => $imageName ? $imageName : "Resim Yok",
-            'images' => !empty($additionalImages) ? implode(',', $additionalImages) : "Resim Yüklenmedi",
+            'image' => $imageName ? $imageName : null,
+            'images' => !empty($additionalImages) ? implode(',', $additionalImages) : null,
         ];
     
         $this->products->insert($data);
@@ -213,6 +213,6 @@ class ProductController extends BaseController
                 return redirect()->back()->with("success", "Ürün bulunamadı");
             }
 
-            return redirect()->to('/product')->with("success", "Ürün Başarıyla silindi");
+            return redirect()->back()->with("success", "Ürün Başarıyla silindi");
         }
 }
