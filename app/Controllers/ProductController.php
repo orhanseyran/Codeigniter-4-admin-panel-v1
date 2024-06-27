@@ -148,7 +148,9 @@ class ProductController extends BaseController
                 'brand' => $this->request->getPost('brand'),
                 'cargo' => $this->request->getPost('cargo'),
                 'category' => $this->request->getPost('category'),
+                'stock_code' => 'SK' . rand(99,999999),
                 'user_id' => $this->session_id,
+                'qty' => $this->request->getPost('qty'),
             ];
 
             // Yeni ana resim varsa işle
