@@ -53,7 +53,7 @@ Kurulum
 
 composer install
 
-database dosyasını importlayın.
+valletproject adınnda database oluşturup database.sql dosyasını importlayın .
 
 envtext dosyasını .env olarak düzenleyin.
 
