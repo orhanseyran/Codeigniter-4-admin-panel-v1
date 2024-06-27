@@ -53,8 +53,8 @@ class Product extends Model
                     ->first();
     }
 
-    public function deleteproduct($session_id){
-        $this->where("user_id", $session_id)->delete();
+    public function deleteproduct($product_id,$user_id){
+        $this->where("id", $product_id)->where("user_id",$user_id)->delete();
     }
 
     public function lastproducts($session_id){

@@ -213,7 +213,9 @@ class ProductController extends BaseController
 
         public function delete($id){
 
-            $product = $this->products->deleteproduct($id);
+            $session_id = $this->session_id;
+
+            $product = $this->products->deleteproduct($id,$session_id);
 
             if (!$product) {
                 return redirect()->back()->with("success", "Ürün bulunamadı");
