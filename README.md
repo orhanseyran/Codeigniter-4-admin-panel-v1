@@ -32,5 +32,14 @@ Güvenlik:
 Oturum (Session) Bazlı Giriş ve Kayıt: Kullanıcıların güvenli bir şekilde sisteme giriş yapmalarını ve yeni kullanıcıların güvenli bir şekilde kayıt olmalarını sağlayan oturum bazlı sistem entegre edilmiştir.
 Çoklu Satıcı Desteği:
 
+
+Kurulum
+Composer install 
+database dosyasını importlayın
+
+Admin Giriş Bilgileri
+orhanseyran335@gmail.com
+142536
+
 Satıcı Üyelik ve Ürün Yayınlama: Birden fazla satıcı, sisteme üye olup kendi ürünlerini yayınlayabilir, bu da platformun esnekliğini ve kullanıcı tabanını genişletir.
 Bu proje, e-ticaret operasyonlarını verimli bir şekilde yönetmek ve kullanıcı deneyimini iyileştirmek için tasarlanmıştır. Sadece 2 gün içinde tamamlanmış olması, hızlı ve etkili çözüm üretme yeteneğimi göstermektedir. Amacım, şirkete katılarak bu tür yenilikçi çözümlerle katkı sağlamak ve sektördeki başarıya ortak olmaktır.
