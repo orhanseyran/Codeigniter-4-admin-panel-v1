@@ -39,6 +39,8 @@ Kurulum
 
 -database dosyasını importlayın
 
+-envtext dosyasını .env olarak düzenleyin
+
 Admin Giriş Bilgileri
 orhanseyran335@gmail.com
 142536
