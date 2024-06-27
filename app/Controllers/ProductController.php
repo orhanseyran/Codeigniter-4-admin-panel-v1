@@ -214,6 +214,7 @@ class ProductController extends BaseController
         public function delete($id){
 
             $session_id = $this->session_id;
+            
 
             $product = $this->products->deleteproduct($id,$session_id);
 

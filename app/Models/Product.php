@@ -54,6 +54,7 @@ class Product extends Model
     }
 
     public function deleteproduct($product_id,$user_id){
+        
         $this->where("id", $product_id)->where("user_id",$user_id)->delete();
     }
 

@@ -172,6 +172,7 @@
                             </td>
                             <td> 
                               <div class="product-names">
+                                
                                 <?php if($product['image'] == null ):?>
                                 <div class="light-product-box"><img class="img-fluid" src="images/logo.png" alt="laptop"></div>
                                 <?php elseif($product['image']): ?>
