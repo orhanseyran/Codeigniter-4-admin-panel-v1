@@ -139,6 +139,7 @@ class ProductController extends BaseController
             if (!$product) {
                 return redirect()->back()->with("error", "Ürün bulunamadı");
             }
+            //güncelleme
 
             // Yeni verileri güncelleme için hazırla
             $imageName = null;
