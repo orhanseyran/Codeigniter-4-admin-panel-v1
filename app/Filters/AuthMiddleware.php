@@ -30,6 +30,9 @@ class AuthMiddleware implements FilterInterface
         if (session()->get('isLoggedIn')) {
             return $request;
         }
+        else {
+            return redirect()->to("login-user");
+        }
 
         return redirect()->back();
         // Giriş yapmışsa, devam et
