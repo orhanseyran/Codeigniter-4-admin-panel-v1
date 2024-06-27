@@ -141,43 +141,38 @@ class ProductController extends BaseController
             }
 
             // Yeni verileri güncelleme için hazırla
-            $data = [
-                'name' => $this->request->getPost('name'),
-                'price' => $this->request->getPost('price'),
-                'description' => $this->request->getPost('description'),
-                'brand' => $this->request->getPost('brand'),
-                'cargo' => $this->request->getPost('cargo'),
-                'category' => $this->request->getPost('category'),
-                'stock_code' => 'SK' . rand(99,999999),
-                'user_id' => $this->session_id,
-                'qty' => $this->request->getPost('qty'),
-            ];
-
-            // Yeni ana resim varsa işle
-            $image = $this->request->getFile('image');
-            if ($image->isValid() && !$image->hasMoved()) {
-                $imageName = $image->getRandomName();
-                $image->move('uploads', $imageName);
-                $data['image'] = $imageName;
-            }
-
-            // Ek resimleri işle
-            $additionalImages = [];
-            $images = $this->request->getFiles('images');
-            if ($images) {
-                foreach ($images['images'] as $file) {
-                    if ($file->isValid() && !$file->hasMoved()) {
-                        $fileName = $file->getRandomName();
-                        $file->move('uploads', $fileName);
-                        $additionalImages[] = $fileName;
-                    }
+            $imageName = null;
+        $image = $this->request->getFile('image');
+        if ($image && $image->isValid() && !$image->hasMoved()) {
+            $imageName = $image->getRandomName();
+            $image->move('uploads', $imageName);
+        }
+    
+        $additionalImages = [];
+        $images = $this->request->getFiles('images');
+        if ($images) {
+            foreach ($images['images'] as $file) {
+                if ($file->isValid() && !$file->hasMoved()) {
+                    $fileName = $file->getRandomName();
+                    $file->move('uploads', $fileName);
+                    $additionalImages[] = $fileName;
                 }
             }
-
-            // Eski ek resimleri ekleyerek yeni resimleri güncelle
-            $existingImages = explode(',', $product['images']);
-            $updatedImages = array_merge($existingImages, $additionalImages);
-            $data['images'] = implode(',', $updatedImages);
+        }
+    
+        $data = [
+            'name' => $this->request->getPost('name'),
+            'price' => $this->request->getPost('price'),
+            'description' => $this->request->getPost('description'),
+            'brand' => $this->request->getPost('brand'),
+            'cargo' => $this->request->getPost('cargo'),
+            'category' => $this->request->getPost('category'),
+            'stock_code' => 'SK' . rand(99,999999),
+            'user_id' => $this->session_id,
+            'qty' => $this->request->getPost('qty'),
+            'image' => $imageName ? $imageName : $product["image"],
+            'images' => !empty($additionalImages) ? implode(',', $additionalImages) : explode(',',$product["images"]),
+        ];
 
             // Veritabanında güncelle
             $this->products->update($product, $data);
