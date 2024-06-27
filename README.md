@@ -34,8 +34,10 @@ Oturum (Session) Bazlı Giriş ve Kayıt: Kullanıcıların güvenli bir şekild
 
 
 Kurulum
-Composer install 
-database dosyasını importlayın
+
+-Composer install 
+
+-database dosyasını importlayın
 
 Admin Giriş Bilgileri
 orhanseyran335@gmail.com
