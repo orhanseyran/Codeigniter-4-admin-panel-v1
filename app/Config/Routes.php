@@ -36,6 +36,7 @@ $routes->group('', [ 'filter' => 'auth'], function ($routes) {
     $routes->get('/products', 'ProductController::indexproducts');
     $routes->post('/product-post', 'ProductController::upload');
     $routes->post('/product-edit-(:segment)', 'ProductController::update/$1');
+    $routes->get('/updatastatus-(:segment)', 'ProductController::updatastatus/$1');
     $routes->get('/admin-productedit-(:num)', 'ProductController::indexproductedit/$1');
 
     $routes->get('/category', 'CategoryController::index');

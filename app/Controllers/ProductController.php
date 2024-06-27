@@ -180,6 +180,31 @@ class ProductController extends BaseController
 
             return redirect()->back()->with("success", "Ürün Başarıyla güncellendi");
         }
+        public function updatastatus($id)
+        {
+            $session_id = $this->session_id;
+            // İstenen veriyi al
+            $product = $this->products->productupdate($session_id,$id);
+
+            if (!$product) {
+                return redirect()->back()->with("error", "Ürün bulunamadı");
+            }
+            // Durumun tersini al (toggle işlemi)
+            $newDurum = $product["durum"] == 1 ? 2 : 1;
+        
+            // Güncellenecek veriyi hazırla
+            $data = [
+                'durum' => $newDurum,
+            ];
+        
+            // Veritabanında güncelle
+            $this->products->update($id, $data);
+        
+            // Başarı mesajını hazırla
+            $statusMessage = $newDurum == 1 ? "Aktif" : "Pasif";
+            return redirect()->back()->with('success', "Ürün Durumu $statusMessage Güncellendi!");
+        }
+
         public function delete($id){
 
             $product = $this->products->deleteproduct($this->session_id);

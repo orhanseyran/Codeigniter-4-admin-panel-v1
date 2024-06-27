@@ -201,11 +201,14 @@
                             <?php endif?>
 
                             <?php if ($product["durum"] == 1): ?>
-                              <td> <span class="btn btn-outline-success">Aktif</span></td>
+                              <td> <a href="/updatastatus-<?= $product["id"] ?>"><span class="btn btn-outline-success">Aktif</span></a> </td>
+                              <?php elseif($product["durum"] == 2):?>
+                                <td> <a href="/updatastatus-<?= $product["id"] ?>"><span class="btn btn-outline-danger">Ürün Aktif Değil</span></a> </td>
                             <?php elseif($product["durum"] == 0):?>
-                              <td> <span class="btn btn-outline-danger">Tatil Modunda</span></td>
+                              <td> <a href="/updatastatus-<?= $product["id"] ?>"><span class="btn btn-outline-danger">Tatil Modunda</span></a> </td>
      
                             <?php endif?>
+
                             
 
                             <!-- <td> 
