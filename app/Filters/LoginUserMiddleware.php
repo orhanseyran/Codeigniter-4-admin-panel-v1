@@ -32,7 +32,7 @@ class LoginUserMiddleware implements FilterInterface
             //session yok ise kullanıcının isteğini devam ettir
         }
         // Giriş yapmışsa, Geldiği Sayfaya geri gönder
-        return redirect()->back();
+        return redirect()->to('/login-user');
     
         
         
