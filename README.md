@@ -47,6 +47,8 @@ Oturum (Session) Bazlı Giriş ve Kayıt: Kullanıcıların güvenli bir şekild
 Çoklu Satıcı Desteği
 
 Satıcı Üyelik ve Ürün Yayınlama: Birden fazla satıcı, sisteme üye olup kendi ürünlerini yayınlayabilir, bu da platformun esnekliğini ve kullanıcı tabanını genişletir.
+
+
 Kurulum
 
 composer install
