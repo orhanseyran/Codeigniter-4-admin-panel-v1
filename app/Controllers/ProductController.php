@@ -127,40 +127,43 @@ class ProductController extends BaseController
         return redirect()->back()->with('success', 'Ürün başarıyla eklendi');
     }
     
-            public function update($id)
-        {
-         
-
-            $session_id = $this->session_id;
-
-            // Güncellenecek ürünü veritabanından al
-            $product = $this->products->productupdate($session_id,$id);
-
-            if (!$product) {
-                return redirect()->back()->with("error", "Ürün bulunamadı");
-            }
-            //güncelleme
-
-            // Yeni verileri güncelleme için hazırla
-            $imageName = null;
+    public function update($id)
+    {
+        $session = session();
+        $session_id = $session->get('id');
+    
+        // Fetch the product to be updated using the session ID and product ID
+        $product = $this->products->productupdate($session_id, $id);
+        if (!$product) {
+            return redirect()->back()->with("error", "Ürün bulunamadı.");
+        }
+    
+        // Initialize image variables
+        $imageName = null;
         $image = $this->request->getFile('image');
         if ($image && $image->isValid() && !$image->hasMoved()) {
             $imageName = $image->getRandomName();
-            $image->move('uploads', $imageName);
+            if (!$image->move('uploads', $imageName)) {
+                return redirect()->back()->with('error', 'Resim yüklenirken bir hata oluştu.');
+            }
         }
     
+        // Handle multiple images
         $additionalImages = [];
         $images = $this->request->getFiles('images');
         if ($images) {
             foreach ($images['images'] as $file) {
                 if ($file->isValid() && !$file->hasMoved()) {
                     $fileName = $file->getRandomName();
-                    $file->move('uploads', $fileName);
+                    if (!$file->move('uploads', $fileName)) {
+                        return redirect()->back()->with('error', 'Ek resimler yüklenirken bir hata oluştu.');
+                    }
                     $additionalImages[] = $fileName;
                 }
             }
         }
     
+        // Prepare the data for update
         $data = [
             'name' => $this->request->getPost('name'),
             'price' => $this->request->getPost('price'),
@@ -168,18 +171,21 @@ class ProductController extends BaseController
             'brand' => $this->request->getPost('brand'),
             'cargo' => $this->request->getPost('cargo'),
             'category' => $this->request->getPost('category'),
-            'stock_code' => 'SK' . rand(99,999999),
-            'user_id' => $this->session_id,
+            'stock_code' => 'SK' . rand(99, 999999),
+            'user_id' => $session_id,
             'qty' => $this->request->getPost('qty'),
-            'image' => $imageName ? $imageName : $product["image"],
-            'images' => !empty($additionalImages) ? implode(',', $additionalImages) : explode(',',$product["images"]),
+            'image' => $imageName ?: $product['image'],
+            'images' => !empty($additionalImages) ? implode(',', $additionalImages) : $product['images'],
         ];
-
-            // Veritabanında güncelle
-            $this->products->update($product, $data);
-
-            return redirect()->back()->with("success", "Ürün Başarıyla güncellendi");
+    
+        // Update the product in the database
+        $updated = $this->products->update($id, $data);
+        if (!$updated) {
+            return redirect()->back()->with('error', 'Ürün güncellenirken bir hata oluştu.');
         }
+    
+        return redirect()->back()->with("success", "Ürün Başarıyla güncellendi.");
+    }
         public function updatastatus($id)
         {
             $session_id = $this->session_id;
@@ -213,6 +219,6 @@ class ProductController extends BaseController
                 return redirect()->back()->with("success", "Ürün bulunamadı");
             }
 
-            return redirect()->back()->with("success", "Ürün Başarıyla silindi");
+            return redirect()->to('/product')->with("success", "Ürün Başarıyla silindi");
         }
 }

@@ -21,6 +21,10 @@ class TatilModeControllerApi extends BaseController
     {
         // Kullanıcıyı oturumdan al
         $userId = session()->get('id');
+
+        $ürün = $this->products->where('user_id', $userId)->first();
+
+   
         
         if (!$userId) {
             return $this->response->setStatusCode(ResponseInterface::HTTP_UNAUTHORIZED)
@@ -35,6 +39,10 @@ class TatilModeControllerApi extends BaseController
                                   ->setJSON(['message' => 'User not found']);
         }
 
+        
+
+ 
+
         // Tatil modunu güncelle
         $newTatilModu = $user['tatil_modu'] == 0 ? 1 : 0;
 
@@ -44,6 +52,7 @@ class TatilModeControllerApi extends BaseController
         // Tatil moduna göre ürünleri güncelle
         if ($newTatilModu == 1) {
             $this->products->where('user_id', $userId)->set(['durum' => 0])->update();
+            
         } else {
             $this->products->where('user_id', $userId)->set(['durum' => 1])->update();
         }
