@@ -122,6 +122,8 @@
         </div>
 
         <form action="/product-post" method="post" enctype="multipart/form-data">
+        <?php csrf_field() ?>
+
          
 
           <div class="container-fluid">

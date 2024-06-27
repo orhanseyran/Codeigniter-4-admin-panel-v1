@@ -198,7 +198,7 @@
                                     
                                   </svg></a>
                                 <svg>
-                               <a onclick="confirm('Kargoyi Silmek İstiyormusunuz')" href=""><use href="../assets/svg/icon-sprite.svg#trash1"></use></a>   
+                               <a onclick="confirm('Kargoyi Silmek İstiyormusunuz')" href="cargo/delete/<?= $get["id"] ?>"><use href="../assets/svg/icon-sprite.svg#trash1"></use></a>   
                                 </svg>
                               </div>
 

@@ -121,6 +121,8 @@
         </div>
 
         <form action="/product-edit-<?= $product["id"]?>" method="post" enctype="multipart/form-data">
+        <?php csrf_field() ?>
+
          
 
           <div class="container-fluid">

@@ -200,15 +200,18 @@
                                     
                                   </svg></a>
                                 <svg>
-                               <a onclick="confirm('Kategoriyi Silmek İstiyormusunuz')" href=""><use href="../assets/svg/icon-sprite.svg#trash1"></use></a>   
+                               <a onclick="confirm('Kategoriyi Silmek İstiyormusunuz')" href="category/delete/<?= $get["id"] ?>"><use href="../assets/svg/icon-sprite.svg#trash1"></use></a>   
                                 </svg>
                               </div>
 
                               <div class="modal fade" id="exampleModal<?= $get["id"] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModal<?= $get["id"] ?>" aria-hidden="true">
                       <div class="modal-dialog" role="document">
-                 
-                   
-                        <div class="modal-content">
+
+
+                      <form action="category/update/<?= $get["id"] ?>" method="post">
+                        <?php csrf_field() ?>
+
+                      <div class="modal-content">
                           <div class="modal-body">
                             <div class="modal-toggle-wrapper"> 
                               <div class="modal-img"> <img src="../assets/images/gif/online-shopping.gif" alt="online-shopping"></div>
@@ -242,10 +245,15 @@
                             
 
                                 <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">İptal Et</button>
-                                <button class="btn btn-primary" type="submit">Kategori Ekle</button>
+                                <button class="btn btn-primary" type="submit">Düzenle</button>
                             </div>
                           </div>
                         </div>
+
+                      </form>
+                 
+                   
+    
                       
                       </div>
                     </div>
